@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bm4kyvbwxut6r" path="res://sprites/Sprite Pack 4/1 - Agent_Mike_Jump_&_Falling (32 x 32).png" id="2_gxdbb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqs7v"]
-size = Vector2(23, 18)
+size = Vector2(14, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3omab"]
 atlas = ExtResource("1_w85mb")
@@ -98,13 +98,19 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15.5, 1)
-scale = Vector2(1, 1)
+position = Vector2(12, 1.5)
 shape = SubResource("RectangleShape2D_yqs7v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(11.5, -8.25)
 scale = Vector2(1.28125, 1.10938)
 sprite_frames = SubResource("SpriteFrames_u0kul")
 animation = &"jump"
 autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(13, -27)
+limit_left = 0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
